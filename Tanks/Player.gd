@@ -1,4 +1,4 @@
-extends "res://Tanks/tank.gd"
+extends "res://Tanks/Tank.gd"
 
 func control(delta):
 	$Turret.look_at(get_global_mouse_position())
@@ -13,3 +13,5 @@ func control(delta):
 		velocity = Vector2(speed, 0).rotated(rotation)
 	if Input.is_action_pressed('back'):
 		velocity = Vector2(-speed/2, 0).rotated(rotation)
+	if Input.is_action_just_pressed('click'):
+		shoot()

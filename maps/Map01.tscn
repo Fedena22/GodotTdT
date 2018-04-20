@@ -9,15 +9,16 @@
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, 15.5671, -2.99368, 835.829, 583.582, 43.7077, -77.8357, -48.0629, 77.8539, 832.219, 949.094, 0, 0, 81.0316, 80.2372, 885.466, 1005.95, 0, 0, 89.2117, 18.5608, 2191.38, 996.926, 0, 0, 69.4534, -30.5355, 2252.79, 922.951, 0, 0, 56.8799, -96.3965, 2243.26, 520.281, 0, 0, -109.569, -55.0837, 2104.51, 450.902, 0, 0, -135.314, -98.7915, 946.83, 454.983, 0, 0, 0, 0, 835.829, 583.582 )
+"points": PoolVector2Array( 0, 0, 15.5671, -2.99368, 815.87, 666.047, -9.47789, -80.0518, -0.417473, 83.3941, 801.465, 946.379, 0, 0, 281.586, 83.5613, 881.244, 1036.13, 0, 0, 157.91, -24.6525, 2188.72, 1071.59, 0, 0, -2.08379, -0.738308, 2364.29, 880.383, 0, 0, 4.08719, -122.179, 2366.75, 536.616, 0, 0, -0.300369, 3.8477, 2100.33, 423.664, 0, 0, -148.61, -6.82475, 946.83, 454.983, 0, 0, 0, 0, 835.829, 583.582, 0, 0, 0, 0, 815.87, 666.047 )
 }
 
-[node name="Map01" type="Node2D" index="0"]
+[node name="Map01" type="Node2D"]
 
 script = ExtResource( 1 )
 
 [node name="Ground" type="TileMap" parent="." index="0"]
 
+position = Vector2( -995.558, -4.3186 )
 mode = 0
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 128, 128 )
@@ -43,12 +44,13 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="Path2D" type="Path2D" parent="Paths" index="0"]
 
+position = Vector2( 0, -4.56091 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D" index="0"]
 
-position = Vector2( 835.829, 583.582 )
-rotation = 0.783159
+position = Vector2( 815.87, 666.047 )
+rotation = 0.898285
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
@@ -59,6 +61,9 @@ lookahead = 4.0
 
 [node name="EnemyTank" parent="Paths/Path2D/PathFollow2D" index="0" instance=ExtResource( 4 )]
 
+position = Vector2( -2.41797, -1.92551 )
 detect_radius = 400
+
+[connection signal="shoot" from="Player" to="." method="_on_Tank_shoot"]
 
 
