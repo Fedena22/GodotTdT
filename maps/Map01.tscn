@@ -40,6 +40,8 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
+position = Vector2( 1517.49, 705.745 )
+
 [node name="Paths" type="Node2D" parent="." index="2"]
 
 [node name="Path2D" type="Path2D" parent="Paths" index="0"]
@@ -65,5 +67,7 @@ position = Vector2( -2.41797, -1.92551 )
 detect_radius = 400
 
 [connection signal="shoot" from="Player" to="." method="_on_Tank_shoot"]
+
+[connection signal="shoot" from="Paths/Path2D/PathFollow2D/EnemyTank" to="." method="_on_Tank_shoot"]
 
 

@@ -10,14 +10,14 @@
 custom_solver_bias = 0.0
 extents = Vector2( 33.6718, 35.9356 )
 
-[node name="Player" index="0" instance=ExtResource( 1 )]
+[node name="Player" instance=ExtResource( 1 )]
 
 collision_layer = 2
 collision_mask = 5
 script = ExtResource( 2 )
 _sections_unfolded = [ "Collision" ]
 Bullet = ExtResource( 3 )
-speed = 200
+max_speed = 100
 rotation_speed = 1.0
 gun_cooldown = 0.4
 health = 100
