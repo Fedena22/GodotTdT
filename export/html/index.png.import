@@ -7,10 +7,7 @@ path="res://.import/index.png-a0ff757b50873b6f70a309d6058eec42.stex"
 [deps]
 
 source_file="res://export/html/index.png"
-source_md5="299da75e49286e888450cf32a391ba86"
-
 dest_files=[ "res://.import/index.png-a0ff757b50873b6f70a309d6058eec42.stex" ]
-dest_md5="e3ccd71cae195284c0d4a57b1a0ceb2a"
 
 [params]
 

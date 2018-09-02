@@ -7,10 +7,7 @@ path="res://.import/terrainTiles_retina.png-214eb5caae5198afbf6e6103a5518aa1.ste
 [deps]
 
 source_file="res://Assets/terrainTiles_retina.png"
-source_md5="b9a1afc866d208ac095cd78eca17d01f"
-
 dest_files=[ "res://.import/terrainTiles_retina.png-214eb5caae5198afbf6e6103a5518aa1.stex" ]
-dest_md5="e58f8fc37343a693402f921c64bf467c"
 
 [params]
 

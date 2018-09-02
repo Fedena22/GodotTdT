@@ -7,10 +7,7 @@ path="res://.import/onlyObjects_retina_rotated.png-3dfef29c3dfafaaf006a6c25c4bb9
 [deps]
 
 source_file="res://Assets/onlyObjects_retina_rotated.png"
-source_md5="6bdd2c2d722e62e5297acf1c67ef8c7c"
-
 dest_files=[ "res://.import/onlyObjects_retina_rotated.png-3dfef29c3dfafaaf006a6c25c4bb97d0.stex" ]
-dest_md5="79e24484bf03c49b7bb79c1694930ed6"
 
 [params]
 
