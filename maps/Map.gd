@@ -3,6 +3,7 @@ extends Node2D
 func _ready():
 	 set_camera_limits()
 	
+	
 func set_camera_limits():
 	var map_limits = $Ground.get_used_rect()
 	var map_cellsize = $Ground.cell_size

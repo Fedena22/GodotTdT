@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://terrain/trerain_tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://Tanks/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tanks/EnemyTank.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Ui/Hud.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -38,7 +39,7 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1517.49, 705.745 )
-motion/sync_to_physics = false
+collision_layer = 4
 
 [node name="Paths" type="Node2D" parent="."]
 
@@ -60,8 +61,11 @@ lookahead = 4.0
 
 [node name="EnemyTank" parent="Paths/Path2D/PathFollow2D" instance=ExtResource( 4 )]
 position = Vector2( -2.41797, -1.92551 )
-motion/sync_to_physics = false
+collision_mask = 1
 detect_radius = 400
 
+[node name="Hud" parent="." instance=ExtResource( 5 )]
+
+[connection signal="health_changed" from="Player" to="Hud" method="update_healthbar"]
 [connection signal="shoot" from="Player" to="." method="_on_Tank_shoot"]
 [connection signal="shoot" from="Paths/Path2D/PathFollow2D/EnemyTank" to="." method="_on_Tank_shoot"]
