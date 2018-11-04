@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://terrain/trerain_tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://Tanks/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tanks/EnemyTank.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Ui/Hud.tscn" type="PackedScene" id=5]
+[ext_resource path="res://enviroment/Obstacle.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -65,6 +66,28 @@ detect_radius = 400
 
 [node name="Hud" parent="." instance=ExtResource( 5 )]
 
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="Obstacle" parent="Obstacles" instance=ExtResource( 6 )]
+position = Vector2( 2048.64, 947.517 )
+rotation = 0.904895
+
+[node name="Obstacle2" parent="Obstacles" instance=ExtResource( 6 )]
+position = Vector2( 1774.74, 568.14 )
+rotation = 0.904895
+type = 16
+
+[node name="Obstacle3" parent="Obstacles" instance=ExtResource( 6 )]
+position = Vector2( 1193.65, 712.488 )
+rotation = 0.904895
+type = 18
+
+[node name="Obstacle4" parent="Obstacles" instance=ExtResource( 6 )]
+position = Vector2( 1148.43, 323.594 )
+rotation = 0.904895
+type = 12
+
+[connection signal="dead" from="Player" to="." method="_on_Player_dead"]
 [connection signal="health_changed" from="Player" to="Hud" method="update_healthbar"]
 [connection signal="shoot" from="Player" to="." method="_on_Tank_shoot"]
 [connection signal="shoot" from="Paths/Path2D/PathFollow2D/EnemyTank" to="." method="_on_Tank_shoot"]

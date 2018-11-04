@@ -74,11 +74,10 @@ max_health = 100
 
 [node name="Muzzel" type="Position2D" parent="Turret"]
 modulate = Color( 1, 1, 1, 0 )
-_sections_unfolded = [ "Visibility" ]
 
 [node name="Flash" type="Sprite" parent="Turret"]
+modulate = Color( 1, 1, 1, 4.76837e-007 )
 region_enabled = true
-_sections_unfolded = [ "Transform" ]
 
 [node name="GunTimer" type="Timer" parent="."]
 process_mode = 1
@@ -101,5 +100,4 @@ visible = false
 animation = "fire"
 
 [connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="Explotion" to="." method="_on_Explotion_animation_finished"]

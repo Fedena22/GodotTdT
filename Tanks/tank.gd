@@ -54,8 +54,6 @@ func explode():
 
 func _on_GunTimer_timeout():
 	can_shoot = true
-	
-	
 
 func _on_Explotion_animation_finished():
 	queue_free()
