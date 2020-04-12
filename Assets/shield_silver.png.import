@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/shield_silver.png-1d51d0db1156f0cdef9b3521232d1e77.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 

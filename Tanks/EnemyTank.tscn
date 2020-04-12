@@ -7,15 +7,12 @@
 [ext_resource path="res://Ui/UnitDisplay.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10.9428 )
+extents = Vector2( 8.5884, 8.28225 )
 
 [node name="EnemyTank" instance=ExtResource( 1 )]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource( 2 )
-_sections_unfolded = [ "Collision" ]
 Bullet = ExtResource( 3 )
 max_speed = 100
 rotation_speed = 0.0
@@ -28,60 +25,41 @@ detect_radius = 200
 texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 85, 264, 80, 81 )
-_sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2( -1.81024, 2.05506 )
+position = Vector2( -1.68674, -0.946122 )
 scale = Vector2( 3.98321, 3.20278 )
 shape = SubResource( 1 )
 
 [node name="Turret" parent="." index="2"]
+position = Vector2( 0, -0.19371 )
 texture = ExtResource( 4 )
 offset = Vector2( 20, 0 )
 region_enabled = true
-region_rect = Rect2( 406, 61, 56, 32 )
-_sections_unfolded = [ "Offset", "Region", "Transform" ]
+region_rect = Rect2( 403.764, 62.0781, 60.3564, 30.9219 )
 
 [node name="Muzzel" parent="Turret" index="0"]
-position = Vector2( 55, 0 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+position = Vector2( 61.78, 0 )
 
 [node name="DetectRadius" type="Area2D" parent="." index="4"]
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
 collision_layer = 4
 collision_mask = 2
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectRadius" index="0"]
 
 [node name="LookAhead1" type="RayCast2D" parent="." index="5"]
 position = Vector2( 0, -30 )
 enabled = true
-exclude_parent = true
 cast_to = Vector2( 100, 0 )
 collision_mask = 7
-collide_with_areas = false
-collide_with_bodies = true
-_sections_unfolded = [ "Transform" ]
 
 [node name="LookAhead2" type="RayCast2D" parent="." index="6"]
 position = Vector2( 0, 30 )
 enabled = true
-exclude_parent = true
 cast_to = Vector2( 100, 0 )
 collision_mask = 7
-collide_with_areas = false
-collide_with_bodies = true
-_sections_unfolded = [ "Transform" ]
 
 [node name="UnitDisplay" parent="." index="7" instance=ExtResource( 5 )]
-
 [connection signal="health_changed" from="." to="UnitDisplay" method="update_healthbar"]
 [connection signal="body_entered" from="DetectRadius" to="." method="_on_DetectRadius_body_entered"]
 [connection signal="body_exited" from="DetectRadius" to="." method="_on_DetectRadius_body_exited"]

@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/metalPanel_yellowCorner.png-f3922a90255d585c6d72bd0ad589faf7.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 

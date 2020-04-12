@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/cursor_pointerFlat_shadow.png-eb96f1921c7a0591b3ca340ec98c781a.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 

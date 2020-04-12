@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/glassPanel_projection.png-bdeb43a7921d431dfa7fe22d6d55fde3.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
